@@ -7,23 +7,23 @@ const (
 	operationEncode
 	operationAll
 
-	decodeSign = "out"
-	encodeSign = "in"
+	decodeSign = "in"
+	encodeSign = "out"
 )
 
 func (o operation) IsValid(options tagOptions) bool {
-	hasIn := options.Contains(encodeSign)
-	hasOut := options.Contains(decodeSign)
+	hasIn := options.Contains(decodeSign)
+	hasOut := options.Contains(encodeSign)
 
 	if (hasIn && hasOut) || (!hasIn && !hasOut) {
 		return true
 	}
 
-	if o == operationEncode {
+	if o == operationDecode {
 		return hasIn
 	}
 
-	if o == operationDecode {
+	if o == operationEncode {
 		return hasOut
 	}
 
