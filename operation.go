@@ -19,13 +19,5 @@ func (o operation) IsValid(options tagOptions) bool {
 		return true
 	}
 
-	if o == operationDecode {
-		return hasIn
-	}
-
-	if o == operationEncode {
-		return hasOut
-	}
-
-	return true
+	return (o == operationDecode && hasIn) || (o == operationEncode && hasOut)
 }
