@@ -1,5 +1,5 @@
 # Encoding Json
-Golang standard `encoding/json` module with more options.
+Golang standard `encoding/json` module with more options to have more control over encoding and decoding.
 
 ## Options
 - `in`: used to include a field only in decoding
